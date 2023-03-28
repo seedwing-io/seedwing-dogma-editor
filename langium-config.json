@@ -1,0 +1,12 @@
+{
+    "projectName": "SeedwingDogma",
+    "languages": [{
+        "id": "seedwing-dogma",
+        "grammar": "src/language-server/seedwing-dogma.langium",
+        "fileExtensions": [".dog"],
+        "textMate": {
+            "out": "syntaxes/seedwing-dogma.tmLanguage.json"
+        }
+    }],
+    "out": "src/language-server/generated"
+}

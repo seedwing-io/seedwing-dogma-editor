@@ -1,0 +1,71 @@
+{
+  "name": "seedwing-dogma",
+  "scopeName": "source.seedwing-dogma",
+  "fileTypes": [
+    ".dog"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "name": "keyword.control.seedwing-dogma",
+      "match": "\\b(anything|boolean|decimal|false|integer|pattern|string|true)\\b"
+    },
+    {
+      "name": "string.quoted.double.seedwing-dogma",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "include": "#string-character-escape"
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.single.seedwing-dogma",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "include": "#string-character-escape"
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.seedwing-dogma",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.seedwing-dogma"
+            }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.seedwing-dogma"
+            }
+          }
+        },
+        {
+          "begin": "//",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.seedwing-dogma"
+            }
+          },
+          "end": "(?=$)",
+          "name": "comment.line.seedwing-dogma"
+        }
+      ]
+    },
+    "string-character-escape": {
+      "name": "constant.character.escape.seedwing-dogma",
+      "match": "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\\{[0-9A-Fa-f]+\\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)"
+    }
+  }
+}
